@@ -21,7 +21,7 @@ const shuffleAndRenderBlocks = () => {
 
   squareBody.innerHTML = "";
   shuffledBlocks.forEach((block) => {
-    squareBody.appendChild(block);
+    squareBody.append(block);
   });
 
   blocks = shuffledBlocks;
