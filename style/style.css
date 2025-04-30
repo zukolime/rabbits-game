@@ -75,6 +75,7 @@
     rgb(192, 255, 150)
   );
   background: linear-gradient(180deg, rgb(80, 237, 7) 7%, rgb(192, 255, 150));
+  animation: pulse 0.5s ease-in-out;
 }
 
 .block-number {
@@ -189,4 +190,16 @@
   opacity: 0.7;
   visibility: visible;
   background-color: #767676;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
