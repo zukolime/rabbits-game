@@ -64,6 +64,27 @@ const swapBlocks = (e) => {
     blocks[currentBlockIndex] = targetBlock;
     blocks[targetBlockIndex] = currentBlock;
   }
+
+  isAssembledPuzzle();
+};
+
+const isAssembledPuzzle = () => {
+  const currentBlocks = Array.from(document.querySelectorAll(".block"));
+
+  const isAssembled = currentBlocks.every(
+    (block, index) => block === initialBlocks[index]
+  );
+
+  if (isAssembled) {
+    squareBody.classList.add("assembled");
+    currentBlocks.forEach((block) => block.classList.add("assembled"));
+    setTimeout(() => {
+      squareBody.classList.remove("assembled");
+      currentBlocks.forEach((block) => block.classList.remove("assembled"));
+    }, 2000);
+  }
+
+  return isAssembled;
 };
 
 shuffleAndRenderBlocks();
